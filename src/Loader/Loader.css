@@ -1,0 +1,35 @@
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  background: #2f2f2f;
+  padding: 15px 10px;
+  border-radius: 10px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  margin: 0 4px;
+  background-color: #ccc; /* Blue color for the dots */
+  border-radius: 50%;
+  animation: blink 1.7s infinite both;
+}
+
+.dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes blink {
+  0%, 80%, 100% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+}

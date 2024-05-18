@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Chatbot from "./Chatbot/Chatbot";
 
 function App() {
+  const [clearChat, setClearChat] = useState(false);
+  const onNewChatClick = () => {
+    setClearChat(true);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="header">
+        <div className="header-wrapper">
+          <img src="/bit-whites.svg" width={30} height={30} />
+          <h2 className="heading">Odd Bit</h2>
+        </div>
+        <img
+          src="/new_chat.svg"
+          title={"New Chat"}
+          width={30}
+          height={30}
+          className="invert-image"
+          onClick={onNewChatClick}
+        />
+      </div>
+      <Chatbot clearChat={clearChat} setClearChat={setClearChat} />
     </div>
   );
 }
